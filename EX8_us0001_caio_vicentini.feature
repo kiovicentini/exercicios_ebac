@@ -7,23 +7,29 @@ Como também escolher a quantidade
 Para depois inserir no carrinho
 
 Contexto:
-Dado que eu selecionei um produto
+Dado que os seguintes dados existem: 
+|cor|tamanho|quantidade|
+|azul|GG|2|
+|azul|GG|12|
 
-Cenário: Adicionado com sucesso
-Quando eu selecionar "Azul"
-E "Tamanho GG"
-E "2 peças"
+Esquema do Cenário: Adicionado com sucesso
+
+Quando eu selecionar <cor>
+E <tamanho>
+E <quantidade>
 Então deve exibir uma mensagem "Adicionado no carrinho"
 
-Cenário: Limite de peças excedido
-Quando eu selecionar "Azul"
-E "Tamanho GG"
-E "12 peças"
-Então deve exibir a mensagem "Limite de peças excedido, apenas 10 peças por compra!"
+Esquema do Cenário: Limite de peças excedido
 
-Cenário: Limpar carrinho 
-Quando eu selecionar "Azul"
-E "Tamanho GG"
-E "2 peças"
+Quando eu selecionar <cor>
+E <tamanho>
+E <quantidade>
+Então deve exibir a <mensagem> "Limite de peças excedido, apenas 10 peças por compra!"
+
+Esquema do Cenário: Limpar carrinho 
+
+Quando eu selecionar <cor>
+E <tamanho>
+E <quantidade>
 E selecionar "Limpar carrinho"
 Então deve exibir as mensagem "Carrinho esvaziado!"
